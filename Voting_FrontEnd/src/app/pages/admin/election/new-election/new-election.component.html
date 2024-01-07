@@ -1,0 +1,46 @@
+<body>
+
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h2>Election</h2>
+                <p>Create New Election by filling below details.</p>
+            </div>
+
+            <form (ngSubmit)="formSubmit()">
+
+                <div class="input-group">
+                    <input [(ngModel)]="viewData.name" name="name" type="text" placeholder="Election Name">
+                </div>
+                <div class="input-group">
+                    <input [(ngModel)]="viewData.descriptions" name="description" type="text" placeholder="description">
+                </div>
+                <div class="row">
+                    <div class="col-mg-3" style="padding-left: 20px;
+                           padding-right: 10px;
+                           padding-top:13px ;">
+                        Start time :</div>
+                    <div class="time">
+                        <input [min]="getCurrentDateTime()" [(ngModel)]="viewData.startDateTime" name="startDateTime" type="datetime-local">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-mg-3" style="padding-left: 20px;
+                           padding-right: 10px;
+                           padding-top:24px ;">
+                        End time :</div>
+
+                    <div class="input-group time">
+                        <input [min]="getCurrentDateTime()" [(ngModel)]="viewData.endDateTime" name="endDateTime" type="datetime-local">
+                    </div>
+                </div>
+
+
+                <div class="row" style="text-align: center;">
+                    <button routerLink="/admin/elections" class="back">Back</button>
+                    <button class="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>

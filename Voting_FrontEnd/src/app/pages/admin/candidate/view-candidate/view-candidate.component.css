@@ -1,0 +1,122 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: rgb(226, 226, 226);
+    background-size: cover;          /* Cover the entire viewport */
+    background-attachment: fixed;    /* Image will not scroll with the content */
+    background-repeat: no-repeat;
+    background-position: center center;
+    
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style the select element */
+select {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    border: none; /* Remove the border */
+    border-bottom: 2px solid #f0f0f0; /* Add only a bottom border */
+    border-radius: 50px; /* Make the input field round */
+    font-size: 14px;
+    background-color: #fafafa;
+    transition: border 0.3s, box-shadow 0.3s; /* Add transition for box-shadow */
+  }
+  
+  /* Style the select options */
+  select option {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    border: none; /* Remove the border */
+    border-bottom: 2px solid #f0f0f0; /* Add only a bottom border */
+    border-radius: 50px; /* Make the input field round */
+    font-size: 14px;
+    background-color: #fafafa;
+    transition: border 0.3s, box-shadow 0.3s; /* Add transition for box-shadow */
+  }
+  
+  /* Add hover and focus styles for better interactivity */
+  select:hover, select:focus {
+    border-color: #007bff;
+    box-shadow: 0 10px 20px -12px rgba(0, 123, 255, 0.25); /* Add a box-shadow on focus */
+    outline: none;
+    background-color: #fff;
+  }
+
+.login-container {
+
+    width: 300%;
+    max-width: 700px;
+}
+
+.login-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.login-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.input-group {
+    margin: 10px 5px;
+    width: 48.4%;
+    display:inline-block;
+    
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    border: none; /* Remove the border */
+    border-bottom: 2px solid #f0f0f0; /* Add only a bottom border */
+    border-radius: 50px; /* Make the input field round */
+    font-size: 14px;
+    background-color: #fafafa;
+    transition: border 0.3s, box-shadow 0.3s; /* Add transition for box-shadow */
+}
+
+input:focus, input:hover{
+    border-color: #007bff;
+    box-shadow: 0 10px 20px -12px rgba(0, 123, 255, 0.25); /* Add a box-shadow on focus */
+    outline: none;
+    background-color: #fff;
+}
+
+button {
+        display: block;
+        width: 80%;
+        padding: 3px; 
+        margin-top: 20px;
+        margin-left: 10%;
+        border: none;
+        border-radius: 15px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+}
+
+.back{
+    background-color: #007bff;
+}
+
+.back:hover {
+    background-color: #0056b3;
+}
+
+.footer {
+    text-align: center;
+}

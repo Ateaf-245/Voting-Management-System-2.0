@@ -1,0 +1,89 @@
+<body>
+
+    
+    <div class="login-container">
+        
+        <div class="login-card">
+                <div class="text-center" *ngIf="candidateData.image==null">
+                    <img 
+                        src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" 
+                        alt=""
+                        style="
+                            max-width: 150px;
+                            max-height: 150px;
+                            border-radius: 60%;
+                            background-position: cover cover;
+                            background-size: cover;
+                            border: 2px solid rgb(80, 156, 255);"
+                        />
+                </div>
+                
+
+                <div class="text-center"  *ngIf="candidateData.image!=null">
+                    <img 
+                        [src]="'data:image/jpeg;base64,'+candidateData.image"
+                        alt=""
+                        style="
+                            width: 150px;
+                            height: 150px;
+                            border-radius: 60%;
+                            background-position: cover cover;
+                            background-size: cover;
+                            border: 2px solid rgb(80, 156, 255);"
+                        />
+                </div>
+            <form (ngSubmit)="formSubmit()">
+                <div class="input-group">
+                    <input [(ngModel)]="candidateData.firstName"
+                           name="firstName"
+                           type="text"
+                           placeholder="First Name">
+                </div>
+                <div class="input-group">
+                    <input [(ngModel)]="candidateData.lastName"
+                           name="lastName"
+                           type="text"
+                           placeholder="Last Name">
+                </div>
+                <div class="input-group">
+                    <input [(ngModel)]="candidateData.partyName"
+                           name="partyName"
+                           type="text"
+                           disabled
+                           placeholder="Party Name">
+                </div>
+                <div class="input-group">
+                    <input [(ngModel)]="candidateData.election.name"
+                        name="electionName"
+                        type="text"
+                        disabled
+                        placeholder="Election Name">
+                </div>
+                <div class="input-group address">
+                    <input [(ngModel)]="candidateData.election.startDateTime"
+                        name="startDateTime"
+                        type="datetime-local"
+                        disabled
+                        placeholder="start Date & Time">
+                </div>
+
+                <div class="input-group address">
+                    <input [(ngModel)]="candidateData.election.endDateTime"
+                        name="endDateTime"
+                        type="datetime-local"
+                        disabled
+                        placeholder="end Date & Time">
+                </div>
+                
+              
+                <div class="row">
+                    <button routerLink="/admin/candidates" class="back">Back</button>
+                    <button type="submit" class="submit">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+
+

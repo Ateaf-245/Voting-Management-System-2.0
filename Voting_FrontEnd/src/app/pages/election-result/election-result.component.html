@@ -1,0 +1,160 @@
+<html>
+
+<body>
+    <div class="admin-container">
+        <div class="container-fluid">
+            <h3 style="padding-top: 15px;" class="text-center">Election Result</h3>
+            <br>
+
+            <div class="row">
+                <div class="col-md-7 " style="margin-left: 7%;">
+
+                    <h5>Election Name : {{election.name}}</h5>
+                    <h5 *ngIf="election.descriptions">Description : {{election.descriptions}}</h5>
+                    <h5 *ngIf="!election.descriptions">Description : NA</h5>
+                </div>
+                <div class="col-md-4">
+                    <h5>Start Time : {{formattedDate(election.startDateTime)}}</h5>
+                    <h5>End Time : {{formattedDate(election.endDateTime)}}</h5>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row users">
+                <div class="col-md-7">
+                    <div class="user">
+
+                      
+
+                        <div class="side-card">
+                            <div class="row">
+
+                                <div class="col-md-6 text-left">
+                                    <div> <span class="text">Total Candidates</span> </div>
+                                    <div> <span class="text">Total Voters</span> </div>
+                                    <div> <span class="text">Total votes received</span> </div>
+                                    <div> <span class="text">Winning percentage</span> </div>
+                                </div>
+                                <div class="col-md-6 text-left">
+                                    <div> <span class="text">{{result.totalCandidate}}</span> </div>
+                                    <div> <span class="text">{{result.totalVoter}}</span> </div>
+                                    <div> <span class="text">{{result.totalVotesReceived}}</span> </div>
+                                    <div> <span class="text">{{winningPercentage}}</span> </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="side-card">
+                            <div class="row">
+                                <div class="col-md-12">                                
+                                    <div class="table-container">
+                                    <table class="table">
+                                      <thead>
+                                        <tr>
+                                          <th>Candidate ID</th>
+                                          <th>Candidate Name</th>
+                                          <th>Party Name</th>
+                                          <th>Votes</th>
+                                          
+                                        </tr>
+                                      </thead>
+                                      <tbody >
+              
+                                        <tr *ngFor="let c of result.CandidateVotes">
+                                          <td>{{c.candidate.candidate_id}}</td>
+                                          <td>{{c.candidate.firstName}} {{c.candidate.lastName}}</td>
+                                          <td>{{c.candidate.partyName}}</td>
+                                          <td>{{c.count}}</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-5">
+                    <div class="user">
+                        <div class="winner-card">
+                            <h2>Winner</h2>
+                            <div class="text-center" *ngIf="result.Winner.candidate.image==null">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg"
+                                    alt=""
+                                    style="
+                                                                max-width: 150px;
+                                                                max-height: 150px;
+                                                                border-radius: 60%;
+                                                                background-position: cover cover;
+                                                                background-size: cover;
+                                                                border: 2px solid rgb(80, 156, 255);" />
+                            </div>
+
+                            <div *ngIf="result.Winner.candidate.image!=null">
+                                <img [src]="'data:image/jpeg;base64,'+result.Winner.candidate.image" alt=""
+                                    style="
+                                                                 max-width: 150px;
+                                                                max-height: 150px;
+                                                                border-radius: 60%;
+                                                                background-position: cover cover;
+                                                                background-size: cover;
+                                                                border: 2px solid rgb(80, 156, 255);" />
+                            </div>
+
+                            
+                                <div class="row">
+                                    <div class="col-md-12 text text-center">
+                                     {{result.Winner.candidate.firstName}} {{result.Winner.candidate.lastName}}
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="row">
+                                    <div class="col-md-9 text text-left">
+
+                                        <div class="row">
+                                            <div class="col-md-6 text-left">
+                                               Winning Party 
+                                            </div>
+                                            <div class="col-md-6 text-left">
+                                                :  {{result.Winner.candidate.partyName}}
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-7 text-left">
+                                                Votes Received
+                                            </div>
+                                            <div class="col-md-5 text-left">
+                                                : {{result.Winner.count}}
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-7 text-left">
+                                                Votes percentage
+                                            </div>
+                                            <div class="col-md-5 text-left">
+                                                : {{formatNumber((result.Winner.count*100)/result.totalVotesReceived)}}
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    background: rgb(226, 226, 226);
+  }
+  
+  .admin-container {
+
+    height: 100vh;
+  }
+
+  .container {
+    display: flex;
+    
+  }
+  .paragraph{
+    font-family: " Georgia, Times New Roman", Serif;
+    font-size: large;
+    margin-left: 20px ;
+    margin-top: 20px;
+  }
+
+  .users {
+    flex: 3;
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+
+  .user {
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .text{
+    font-size: medium;
+    font-family: " Georgia, Times New Roman", Serif;
+    nav-left: auto;
+    margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  }
+  
+  .winner-card {
+    flex: 1;
+    background: #6ad6ad;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  }
+  
+  .winner-card button {
+    margin-top: 15px;
+    padding: 6px 20px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #4AD489;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+  
+  .winner-card button:hover {
+    background: #4AD489;
+    color: #fff;
+  }
+
+  .side-card {
+    flex: 1;
+    background: #b0daca;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  }
+  
+  .side-card button {
+    margin-top: 15px;
+    padding: 6px 20px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #4AD489;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+  
+  .side-card button:hover {
+    background: #4AD489;
+    color: #fff;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .table th {
+    padding: 12px 15px;
+    display: wide;
+  }
+
+  .table td {
+    padding: 12px 15px;
+    display: wide;
+  }
+
+  .table thead {
+   
+    color: rgb(228, 11, 11);
+  }
+  
+  .table tbody tr:nth-of-type(odd) {
+    background-color: #7fd4a6;
+  }

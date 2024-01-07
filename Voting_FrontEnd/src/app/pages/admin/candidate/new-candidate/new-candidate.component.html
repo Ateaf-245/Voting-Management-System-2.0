@@ -1,0 +1,56 @@
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h2>Candidate</h2>
+                <p>Create New Candidate by filling below details.</p>
+            </div>
+
+            <form (ngSubmit)="formSubmit()">
+                <div class="input-group">
+                    <input [(ngModel)]="candidateData.firstName"
+                           name="firstName"
+                           type="text"
+                           placeholder="First Name">
+                </div>
+                <div class="input-group">
+                    <input [(ngModel)]="candidateData.lastName"
+                           name="lastName"
+                           type="text"
+                           placeholder="Last Name">
+                </div>
+                <div class="input-group">
+                    <input [(ngModel)]="candidateData.partyName"
+                           name="email"
+                           type="email"
+                           placeholder="Party Name">
+                </div>
+            
+                <div class="input-group">
+                    <select name="election" [(ngModel)]="candidateData.election.election_id">
+                        <option value="" disabled selected>Select an option</option>
+                        <option *ngFor="let e of election" [value]="e.election_id">
+                            {{ e.name }}
+                        </option>
+                        
+                    </select>
+                   
+                </div>
+    
+                <div class="input-group">
+                    <span>upload photo</span>
+                    <input type="file" accept="image/*" id="photo" (change)="onPhotoSelected($event)" >
+                </div>
+                
+                
+                <div class="row" style="text-align: center;">
+                    <button routerLink="/admin/candidates" style="background-color: #007bff;">Back</button>
+                    <button style="background-color: #06b33a;"  type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+
+

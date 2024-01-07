@@ -1,0 +1,63 @@
+* {
+    margin: 10;
+    padding:10;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .admin-navbar {
+    background: #fff;
+    transition: 1s;
+    overflow: hidden;
+    height: 100%;
+  }
+    
+  .admin-navbar ul {
+    list-style: none;
+  }
+
+  .admin-navbar li {
+    padding-top:20px;
+    text-align: leq;
+  }
+  
+  .admin-navbar a {
+    display: block;
+    color: rgb(85, 83, 83);
+  }
+  
+  .nav-item-admin {
+    padding-bottom: 3rem;
+    padding-top: 10px;
+  }
+ 
+  .nav-item-admin span {
+    margin-left: 40px;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  
+  .admin-navbar i {
+    font-size: 20px;
+  }
+  
+  .admin-navbar .nav-item {
+    width: 100%;
+    display: inline-block;
+    cursor: pointer;
+    background: white;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+
+  .nav-link:hover {
+    background-color: #007bff;  /* Adjust this color to your preference */
+    color: #ffffff;  /* Adjust text color if needed */
+    border-radius: 5px;  /* Rounded corners */
+    transition: background-color 0.3s ease;  /* Smooth transition for hover effect */
+}
+  

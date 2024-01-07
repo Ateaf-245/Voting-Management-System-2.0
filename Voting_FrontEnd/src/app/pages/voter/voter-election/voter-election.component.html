@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Voter Dashboard</title>
+    <!-- Font Awesome Cdn Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+    <style>
+        .table-container {
+            width: 100%;
+            max-height: 400px;
+            /* Set the maximum height for the container */
+            overflow-y: auto;
+            /* Enable vertical scroll */
+        }
+
+        table {
+            width: 100%;
+            /* Ensure the table takes up the full width of the container */
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="admin-container">
+
+        <!-- Main Content -->
+        <section class="admin-content">
+            <!-- Top Header -->
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-9 text-left">
+                        <h2>Elections List</h2>
+                    </div>
+                    <div class="col-md-3 text-right">
+                        <!-- <input placeholder="Search..."> -->
+                        <input [(ngModel)]="filterTerm" placeholder="Search...">
+                    </div>
+                </div>
+            </div>
+            <!-- Voters List Section -->
+            <div class="scrollable_div" >
+            <div *ngFor="let e of election | filter:filterTerm">
+
+                <section class="attendance">
+                    <div class="attendance-list">
+
+                        <div class="row">
+                            <div class="col-md-10 ">
+
+                                <div class="row">
+                                    <div class="col-md-6 voter_election_title">
+                                        Election Name : {{e.name}}
+                                    </div>
+                                    <div class="col-md-6 voter_election_title">
+                                        Description : {{e.descriptions}}
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 voter_election_title">
+                                        Start Time : {{formattedDate(e.startDateTime)}}
+                                    </div>
+                                    <div class="col-md-6 voter_election_title">
+                                        End Time : {{formattedDate(e.endDateTime)}}
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-2">
+                                <div>
+                                    
+                                    <button *ngIf="check(e.startDateTime, e.endDateTime) == 1"class="open_election" [routerLink]="'/voter/elections/vote/'+e.election_id" >Open</button>
+                                    <button disabled *ngIf="check(e.startDateTime, e.endDateTime) == 0"class="future_election" >yet to start</button>
+                                    <button disabled *ngIf="check(e.startDateTime, e.endDateTime) == -1"class="closed_election" >Closed</button>
+                                    
+                                </div>
+                                <div>
+                                    <button class="view_result" (click)="viewResult(e.startDateTime, e.endDateTime,e.election_id)">View Result</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </section>
+            </div>
+        </div>
+        </section>
+    </div>
+</body>
+
+</html>

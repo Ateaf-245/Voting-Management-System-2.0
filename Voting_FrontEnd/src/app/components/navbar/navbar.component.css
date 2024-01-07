@@ -1,0 +1,35 @@
+/* Navbar Styling */
+.navbar {
+    font-family: 'Arial', sans-serif;
+    background-color: #a6e5f8;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 2rem;
+    width: screen;
+    
+}
+
+.navbar-brand {
+    color: #007bff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #555;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+.fas.fa-user-circle {
+    font-size: 1.5rem;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.fas.fa-user-circle:hover {
+    color: #007bff;
+}

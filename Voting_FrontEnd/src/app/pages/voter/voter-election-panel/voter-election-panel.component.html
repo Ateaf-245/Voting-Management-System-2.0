@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Voter Dashboard</title>
+    <!-- Font Awesome Cdn Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+    <style>
+        .table-container {
+            width: 100%;
+            max-height: 400px;
+            /* Set the maximum height for the container */
+            overflow-y: auto;
+            /* Enable vertical scroll */
+        }
+
+        table {
+            width: 100%;
+            /* Ensure the table takes up the full width of the container */
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="admin-container">
+
+        <section class="admin-content">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-9 text-left">
+                        <h3>Welcome to the Voting Panel of the Election "{{election.name}}"</h3>
+                        <h5 *ngIf="election.descriptions">Description : {{election.descriptions}}</h5>
+                        <h5>Start Time : {{formattedDate(election.startDateTime)}}</h5>
+                        <h5>End Time : {{formattedDate(election.endDateTime)}}</h5>
+                    </div>
+
+                </div>
+            </div>
+            <!-- {{candidates|json}} -->
+            <div class="scrollable_div">
+                <div *ngFor="let e of candidates">
+
+                    <section class="attendance">
+                        <div class="attendance-list">
+
+                            <div class="row">
+                                <div class="col-md-2">
+
+                                    <div class="row">
+                                        <div class="col-md-4 voter_election_title">
+
+                                            <div class="text-center" *ngIf="e.image==null">
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg"
+                                                    alt=""
+                                                    style="
+                                                                                max-width: 150px;
+                                                                                max-height: 150px;
+                                                                                border-radius: 60%;
+                                                                                background-position: cover cover;
+                                                                                background-size: cover;
+                                                                                border: 2px solid rgb(80, 156, 255);" />
+                                            </div>
+
+                                            <div *ngIf="e.image!=null">
+                                                <img [src]="'data:image/jpeg;base64,'+e.image" alt=""
+                                                    style="
+                                                                                width: 90px;
+                                                                                height: 110px;
+                                                                                border-radius: 10%;
+                                                                                background-position: cover cover;
+                                                                                background-size: cover;
+                                                                                border: 2px solid rgb(80, 156, 255);" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-8 ">
+                                    <div class="row">
+                                        <div class="col-md-4 voter_election_title">
+                                            Candidate first Name : {{e.firstName}}
+                                        </div>
+                                        <div class="col-md-4 voter_election_title">
+                                            Last Name : {{e.lastName}}
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4 voter_election_title">
+                                            Party : {{e.partyName}}
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="col-md-2 ">
+                                    <div>
+                                        <button class="vote_election" (click)="vote(e)" >Vote</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

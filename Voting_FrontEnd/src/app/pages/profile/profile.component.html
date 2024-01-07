@@ -1,0 +1,113 @@
+<body>
+    <div class="login-container">
+
+        <div class="login-card">
+            <h5>My Profile :</h5>
+            
+                <div class="text-center" *ngIf="user.image==null">
+                    <img 
+                        src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" 
+                        alt=""
+                        style="
+                            max-width: 150px;
+                            max-height: 150px;
+                            border-radius: 60%;
+                            background-position: cover cover;
+                            background-size: cover;
+                            border: 2px solid rgb(80, 156, 255);"
+                        />
+                </div>
+                
+
+                <div class="text-center"  *ngIf="user.image!=null">
+                    <img 
+                        [src]="'data:image/jpeg;base64,'+user.image"
+                        alt=""
+                        style="
+                            width: 150px;
+                            height: 150px;
+                            border-radius: 60%;
+                            background-position: cover cover;
+                            background-size: cover;
+                            border: 2px solid rgb(80, 156, 255);"
+                        />
+                </div>
+            <form>
+                <div class="input-group">
+                    <input [(ngModel)]="user.firstName"
+                           name="firstName"
+                           type="text"
+                           disabled
+                           placeholder="First Name">
+                </div>
+                <div class="input-group">
+                    <input [(ngModel)]="user.lastName"
+                           name="lastName"
+                           type="text"
+                           disabled
+                           placeholder="Last Name">
+                </div>
+                <div class="input-group">
+                    <input [(ngModel)]="user.email"
+                           name="email"
+                           type="text"
+                           disabled
+                           placeholder="email">
+                </div>
+
+                <div class="input-group">
+                    <input [(ngModel)]="user.phone"
+                           name="phone"
+                           type="text"
+                           disabled
+                           placeholder="phone">
+                </div>
+                <div class="input-group">
+                    <input [(ngModel)]="user.address"
+                           name="address"
+                           type="text"
+                           disabled
+                           placeholder="address">
+                </div>
+
+                <!-- password change -->
+                <div class="input-group" *ngIf="passwordChangeStatus==true">
+                    <input [(ngModel)]="oldPassword"
+                           name="oldPassword"
+                           type="text"
+                    
+                           placeholder="oldPassword">
+                </div>
+
+                <div class="input-group" *ngIf="passwordChangeStatus==true">
+                    <input [(ngModel)]="newPassword"
+                           name="newPassword"
+                           type="text"
+                          
+                           placeholder="newPassword">
+                </div>
+
+                <div class="input-group" *ngIf="passwordChangeStatus==true">
+                    <input [(ngModel)]="confirmNewPassword"
+                           name="confirmNewPassword"
+                           type="text"
+                         
+                           placeholder="confirmNewPassword">
+                </div>         
+          
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6" *ngIf="passwordChangeStatus==false">
+                        <button (click)="changePassword()" class="passwordChange">Change password</button>
+                    </div>
+                    <div class="col-md-6" *ngIf="passwordChangeStatus==true">
+                        <button (click)="updatePassword()" class="passwordChange">Update Passowrd</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+
+

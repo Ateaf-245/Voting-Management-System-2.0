@@ -1,0 +1,94 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    background-image: url('./../../../assets/images/background_image_1.jpg');
+    background-size: cover;          /* Cover the entire viewport */
+    background-attachment: fixed;    /* Image will not scroll with the content */
+    background-repeat: no-repeat;
+    background-position: center center;
+    
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 450px;
+}
+
+.login-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.login-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+}
+
+.input-group {
+    margin: 20px 30px;
+}
+
+input {
+    width: 80%;
+    padding: 15px;
+    margin-left: 15px;
+    box-sizing: border-box;
+    border: none; /* Remove the border */
+    border-bottom: 2px solid #f0f0f0; /* Add only a bottom border */
+    border-radius: 50px; /* Make the input field round */
+    font-size: 14px;
+    background-color: #fafafa;
+    transition: border 0.3s, box-shadow 0.3s; /* Add transition for box-shadow */
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 10px 20px -12px rgba(0, 123, 255, 0.25); /* Add a box-shadow on focus */
+    outline: none;
+    background-color: #fff;
+}
+
+button {
+    display: block;
+    width: 80%;
+    padding: 15px;
+    margin: 20px auto;
+    background-color: #007bff;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

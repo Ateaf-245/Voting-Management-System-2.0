@@ -1,0 +1,86 @@
+<body>
+
+    <div class="login-container">
+
+       
+        
+        <div class="login-card">
+                <div class="text-center" *ngIf="viewData.user.image==null">
+                    <img 
+                        src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg" 
+                        alt=""
+                        style="
+                            max-width: 150px;
+                            max-height: 150px;
+                            border-radius: 60%;
+                            background-position: cover cover;
+                            background-size: cover;
+                            border: 2px solid rgb(80, 156, 255);"
+                        />
+                </div>
+                
+
+                <div class="text-center"  *ngIf="viewData.user.image">
+                    <img 
+                        [src]="viewData.user.image"
+                        alt=""
+                        style="
+                            width: 150px;
+                            height: 150px;
+                            border-radius: 60%;
+                            background-position: cover cover;
+                            background-size: cover;
+                            border: 2px solid rgb(80, 156, 255);"
+                        />
+                      
+                       
+                </div>
+            <form>
+                <div class="input-group">
+                    <input [(ngModel)]="viewData.user.firstName"
+                           name="firstName"
+                           type="text"
+                           disabled
+                           placeholder="First Name">
+                </div>
+                <div class="input-group">
+                    <input [(ngModel)]="viewData.user.lastName"
+                           name="lastName"
+                           type="text"
+                           disabled
+                           placeholder="Last Name">
+                </div>
+                <div class="input-group">
+                    <input [(ngModel)]="viewData.user.email"
+                           name="email"
+                           type="email"
+                           disabled
+                           placeholder="Email">
+                </div>
+                <div class="input-group">
+                    <input [(ngModel)]="viewData.user.phone"
+                           name="phone"
+                           type="tel"
+                           disabled
+                           placeholder="Phone">
+                </div>
+                <div class="input-group address">
+                    <input [(ngModel)]="viewData.user.address"
+                              name="address"
+                              disabled
+                              placeholder="Address">
+                </div>
+                
+              
+                <div class="row">
+                    <button routerLink="/admin/voterValidation" style="background-color: #007bff;">Back</button>
+                    <button (click)="approve(viewData.verification_id)" style="background-color: #06b33a;">Approve</button>
+                    <button (click)="reject(viewData.user.email)" style="background-color: #ff2600;">Reject</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+
+

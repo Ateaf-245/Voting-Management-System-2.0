@@ -1,0 +1,162 @@
+/* CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  img{
+    max-width: 100px;
+    height: 50px;
+    max-height: 150px;
+    border-radius: 60%;
+    background-position: cover cover;
+    background-size: cover;
+    border: 2px solid black;
+  }
+
+  body {
+    background: rgb(226, 226, 226);
+  }
+  
+  .admin-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .admin-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: rgb(226, 226, 226);
+  }
+  
+  .card button:hover {
+    background: #4AD489;
+    color: #fff;
+  }
+  
+  .attendance {
+    margin-top: 20px;
+  }
+  
+  .attendance-list {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  }
+  
+  .attendance-list h1 {
+    margin-bottom: 20px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th, .table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+  }
+  
+  .table thead {
+    background-color: #34AF6D;
+    color: white;
+  }
+  
+  .table tbody tr:nth-of-type(odd) {
+    background-color: #f3f3f3;
+  }
+  
+  .view {
+    padding: 5px 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #4AD489;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+
+
+  .delete{
+    margin-left: 10px;
+    padding: 5px 10px;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+    border: 1px solid #d44a4a;
+  }
+
+  .delete:hover {
+    background: #da2c2c;
+    color: white;
+  }
+  
+  .view:hover {
+    background: #4AD489;
+    color: white;
+  }
+
+  .result {
+    margin-left: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #4a98d4;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+
+  .result:hover {
+    background: #4a98d4;
+    color: white;
+  }
+
+  .add {
+    padding: 5px 10px;
+    cursor: pointer;
+    position: center;
+    background: transparent;
+    border: 1px solid #4463ec;
+    border-radius: 10px;
+    transition: 0.2s;
+  }
+
+  .add:hover {
+    background: #4463ec;
+    color: white;
+  }
+  
+  /* search */
+
+  .Search{
+    flex: 1 1 auto;
+  }
+  input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: none; /* Remove the border */
+    border: 2px solid #f0f0f0; /* Add only a bottom border */
+    border-radius: 50px; /* Make the input field round */
+    font-size: 14px;
+    background-color: #e2d6d6;
+    transition: border 0.3s, box-shadow 0.3s; /* Add transition for box-shadow */
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 10px 20px -12px rgba(0, 123, 255, 0.25); /* Add a box-shadow on focus */
+    outline: none;
+    background-color: #fff;
+}
+  

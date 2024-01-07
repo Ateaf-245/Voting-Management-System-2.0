@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard</title>
+    <!-- Font Awesome Cdn Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+    <style>
+        .table-container {
+            width: 100%;
+            max-height: 400px;
+            /* Set the maximum height for the container */
+            overflow-y: auto;
+            /* Enable vertical scroll */
+        }
+
+        table {
+            width: 100%;
+            /* Ensure the table takes up the full width of the container */
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="admin-container">
+
+        <!-- Main Content -->
+        <section class="admin-content">
+            <!-- Top Header -->
+
+            <!-- Voters List Section -->
+            <section class="attendance">
+                <div class="attendance-list">
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-9 text-left">
+                                <h2>Elections List</h2>
+                            </div>
+                            <div class="col-md-3 text-right">
+                                <input [(ngModel)]="filterTerm" placeholder="Search...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Start Time</th>
+                                    <th>End Time</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr *ngFor="let e of elections | filter:filterTerm">
+                                    <td>{{e.election_id}}</td>
+                                    <td>{{e.name}}</td>
+                                    <td>{{formattedDate(e.startDateTime)}}</td>
+                                    <td>{{formattedDate(e.endDateTime)}}</td>
+                                    <td>
+                                        <button class="view" [routerLink]="'/admin/elections/update/' +e.election_id">Update</button>
+                                        <button class="delete" (click)="deleteElection(e.election_id)">Delete</button>
+                                        <button class="result"  (click)="viewResult(e.startDateTime, e.endDateTime,e.election_id)">Result</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div *ngIf="check" style="text-align:center;">
+                            No Data to display
+                        </div>
+                        <br>
+
+                    </div>
+
+                    <div style="text-align:center;">
+                        <button class="add" routerLink="/admin/elections/add">Create New Election</button>
+                    </div>
+                </div>
+
+            </section>
+
+        </section>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+
+    <style>
+        .table-container {
+            width: 100%;
+            max-height: 400px; /* Set the maximum height for the container */
+            overflow-y: auto; /* Enable vertical scroll */
+        }
+        table {
+            width: 100%; /* Ensure the table takes up the full width of the container */
+            border-collapse: collapse;
+        }
+        
+    </style>
+</head>
+<body>
+  <div class="admin-container">
+   
+    <!-- Main Content -->
+    <section class="admin-content">
+      <!-- Top Header -->
+      <div class="main-top">
+        <h2>Candidates Detials</h2>
+      </div>
+
+      <!-- Voters List Section -->
+      <section class="attendance">
+        <div class="attendance-list">
+           
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-9 text-left">
+                        <h2>Candidates List</h2>
+                    </div>
+                    <div class="col-md-3 text-right">
+                        <input  [(ngModel)]="filterTerm" placeholder="Search...">
+                    </div>
+                </div>
+            </div>
+
+          <div class="table-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Candidate ID</th>
+                <th>Candidate Name</th>
+                <th>Party Name</th>
+                <th>Election</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+           
+            <tbody >
+              
+              <tr *ngFor="let c of candidates | filter:filterTerm">
+                <td>{{c.candidate_id}}</td>
+                <td>{{c.firstName}} {{c.lastName}}</td>
+                <td>{{c.partyName}}</td>
+                <td>{{c.election.name}}</td>
+
+                <td>
+                    <button class="view" [routerLink]="'/admin/candidates/view/' +c.candidate_id">View</button>
+                    <button class="update" [routerLink]="'/admin/candidates/update/' +c.candidate_id">Update</button>
+                    <button class="delete" (click)="deleteCandidate(c.candidate_id)" >Delete</button>
+                </td>
+              </tr>
+            
+            </tbody>
+        
+           
+          </table>
+          <div *ngIf="check" style="text-align:center;">
+            No Data to display
+          </div>
+        </div>
+        <br>
+        <div style="text-align:center;">
+            <button class="add" routerLink="/admin/candidates/add">Create New Candidate</button>
+        </div> 
+        </div>
+      </section>
+    </section>
+  </div>
+</body>
+</html>

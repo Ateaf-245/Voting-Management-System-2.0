@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    background: rgb(226, 226, 226);
+  }
+  
+  .admin-container {
+    display: flex;
+    height: 100vh;
+  }
+
+  .admin-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: rgb(226, 226, 226);
+  }
+
+  .card button:hover {
+    background: #4AD489;
+    color: #fff;
+  }
+
+  .scrollable_div{
+    height: 500px; /* Adjust the height as needed */
+    overflow-y: auto; /* Enable vertical scroll */
+    border: transparent;
+  }
+
+  /* Customize the scrollbar */
+.scrollable_div::-webkit-scrollbar {
+  width: 12px; /* Adjust the width as needed */
+}
+
+/* Handle */
+.scrollable_div::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency (0 for fully transparent, 1 for fully opaque) */
+  border-radius: 8px; /* Optional: round corners */
+}
+
+ 
+
+  .attendance {
+    margin-top: 20px;
+  }
+  
+  .attendance-list {
+    background: #a7dfa5;
+   
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  }
+  
+  .attendance-list h1 {
+    margin-bottom: 20px;
+  }
+
+  .Search{
+    flex: 1 1 auto;
+  }
+  input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: none; /* Remove the border */
+    border: 2px solid #f0f0f0; /* Add only a bottom border */
+    border-radius: 50px; /* Make the input field round */
+    font-size: 14px;
+    background-color: #e2d6d6;
+    transition: border 0.3s, box-shadow 0.3s; /* Add transition for box-shadow */
+}
+
+input:focus {
+    border-color: #b8b0b0;
+    box-shadow: 0 10px 20px -12px rgba(0, 123, 255, 0.25); /* Add a box-shadow on focus */
+    outline: none;
+    background-color: #e2e2e2;
+}
+
+.voter_election_title{
+  margin-top: 13px;
+    color: rgb(185, 29, 37);
+}
+
+.view_result {
+    width: 90%;
+    padding: 5px 10px;
+    cursor: pointer;
+    position: center;
+    background: #69e4a0;
+    border: 1px solid #48d483;
+    border-radius: 10px;
+    transition: 0.2s;
+  }
+
+  .view_result:hover {
+    background: #48d483;
+    color: rgb(0, 0, 0);
+  }
+
+  .vote_election {
+    width: 90%;
+    margin-top: 15%;
+    padding: 20px 5px;
+    margin-bottom: 1px;
+    cursor: pointer;
+    position: center;
+    background: #f1841d;
+    border: 1px solid #e79243;
+    border-radius: 10px;
+    transition: 0.2s;
+  }
+
+  .vote_election:hover {
+    background: #e79243;
+    color: rgb(0, 0, 0);
+  }
+
+  .voted_election {
+    width: 90%;
+    margin-top: 15%;
+    padding: 20px 5px;
+    margin-bottom: 1px;
+    cursor: pointer;
+    position: center;
+    background: #40f11d;
+    border: 1px solid #e79243;
+    border-radius: 10px;
+    transition: 0.2s;
+  }
+
+  .voted_election:hover {
+    background: #e79243;
+    color: rgb(0, 0, 0);
+  }
+
+ 
